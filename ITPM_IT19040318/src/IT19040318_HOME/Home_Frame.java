@@ -94,8 +94,8 @@ public class Home_Frame  {
 		//add company icon
 		Image img = new ImageIcon(this.getClass().getResource("/ABC_com_icon.png")).getImage();
 		company_icon.setIcon(new ImageIcon(img));
-		company_icon.setBackground(Color.WHITE);
-		company_icon.setForeground(Color.WHITE);
+		company_icon.setBackground(Color.LIGHT_GRAY);
+		company_icon.setForeground(Color.LIGHT_GRAY);
 		company_icon.setFont(new Font("Yu Gothic UI Light", Font.BOLD | Font.ITALIC, 43));
 		company_icon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
