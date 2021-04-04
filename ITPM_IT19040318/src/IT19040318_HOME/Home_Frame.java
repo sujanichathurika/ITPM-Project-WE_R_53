@@ -41,9 +41,13 @@ import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
 
-public class Home_Frame {
+public class Home_Frame  {
 
-	private JFrame frame;
+	 JFrame frame; //change the private 
+
+	private JButton SubR;
+	private JButton TagR;
+
 
 	/**
 	 * Launch the application.
@@ -80,7 +84,7 @@ public class Home_Frame {
 		
 		JLabel company_name = new JLabel("ABC INSTITUTE TIME TABLE MANAGEMNT SYSTEM");
 		company_name.setBackground(Color.LIGHT_GRAY);
-		company_name.setForeground(Color.BLUE);
+		company_name.setForeground(new Color(0, 0, 128));
 		company_name.setHorizontalAlignment(SwingConstants.CENTER);
 		company_name.setFont(new Font("Sylfaen", Font.BOLD, 28));
 		company_name.setBounds(184, 0, 836, 93);
@@ -105,6 +109,111 @@ public class Home_Frame {
 		separator_main.setForeground(Color.BLACK);
 		separator_main.setBounds(0, 90, 1073, 3);
 		frame.getContentPane().add(separator_main);
+		
+		JButton LecR = new JButton("Lecture Registration");
+		LecR.setFont(new Font("Sylfaen", Font.BOLD, 22));
+		LecR.setBackground(new Color(240, 230, 140));
+		LecR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		LecR.setBounds(95, 180, 240, 64);
+		frame.getContentPane().add(LecR);
+		
+		JButton SubR = new JButton("Subject Registration");
+		SubR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		SubR.setFont(new Font("Sylfaen", Font.BOLD, 22));
+		SubR.setBackground(new Color(255, 222, 173));
+		SubR.setBounds(409, 180, 240, 64);
+		frame.getContentPane().add(SubR);
+		
+		JButton StdR = new JButton("Student Registration");
+		StdR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//direct to student registration Frame
+				
+				//create Object (interface name,object name,interface name ) and set the initial frame name and remove the public 
+				Reg_New_Std_Upd_Dele Reg_New_Std_Upd_Dele_Move  = new Reg_New_Std_Upd_Dele() ;
+				Reg_New_Std_Upd_Dele_Move.frame.setVisible(true); //object name, and initial class frame name
+				frame.dispose();
+			}
+		});
+		StdR.setFont(new Font("Sylfaen", Font.BOLD, 22));
+		StdR.setBackground(new Color(255, 127, 80));
+		StdR.setBounds(721, 180, 240, 64);
+		frame.getContentPane().add(StdR);
+		
+		JButton TagR = new JButton("Tag Registration");
+		TagR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//direct to tag registration Frame
+				
+				//create Object (interface name,object name,interface name ) and set the initial frame name and remove the public 
+				Tag_Registration Tag_Registration_Move = new Tag_Registration();
+				Tag_Registration_Move.frame.setVisible(true);
+				frame.dispose();		
+				
+			}
+		});
+		TagR.setFont(new Font("Sylfaen", Font.BOLD, 22));
+		TagR.setBackground(new Color(255, 182, 193));
+		TagR.setBounds(95, 305, 240, 64);
+		frame.getContentPane().add(TagR);
+		
+		JButton LocR = new JButton("Location Registration");
+		LocR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		LocR.setFont(new Font("Sylfaen", Font.BOLD, 20));
+		LocR.setBackground(new Color(233, 150, 122));
+		LocR.setBounds(409, 305, 240, 64);
+		frame.getContentPane().add(LocR);
+		
+		JButton worDays = new JButton("Working days & \r\nHours");
+		worDays.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		worDays.setFont(new Font("Sylfaen", Font.BOLD, 18));
+		worDays.setBackground(new Color(154, 205, 50));
+		worDays.setBounds(721, 305, 240, 64);
+		frame.getContentPane().add(worDays);
+		
+		JButton staticMan = new JButton("Static Management ");
+		staticMan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		staticMan.setFont(new Font("Sylfaen", Font.BOLD, 22));
+		staticMan.setBackground(new Color(30, 144, 255));
+		staticMan.setBounds(95, 426, 240, 64);
+		frame.getContentPane().add(staticMan);
+		
+		JButton manageSess = new JButton("Manage Sessions");
+		manageSess.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		manageSess.setFont(new Font("Sylfaen", Font.BOLD, 22));
+		manageSess.setBackground(new Color(175, 238, 238));
+		manageSess.setBounds(409, 426, 240, 64);
+		frame.getContentPane().add(manageSess);
+		
+		JButton TimeTable = new JButton("Generate Time Table");
+		TimeTable.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		TimeTable.setFont(new Font("Sylfaen", Font.BOLD, 20));
+		TimeTable.setBackground(new Color(216, 191, 216));
+		TimeTable.setBounds(721, 426, 240, 64);
+		frame.getContentPane().add(TimeTable);
 		frame.setBounds(200, 200, 1091, 739);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
