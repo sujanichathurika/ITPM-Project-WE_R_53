@@ -206,7 +206,7 @@ public class Add_Sessions {
 	                        JOptionPane.showMessageDialog(Add_btn_Consective, "This is alredy exist");
 	                    } else {
 	                        JOptionPane.showMessageDialog(Add_btn_Consective,
-	                            "Data Added sucessfully");
+	                            "Data Added consective session sucessfully");
 	                    }
 	                    con.close();
 	                } catch (Exception exception) {
@@ -222,6 +222,38 @@ public class Add_Sessions {
 		JButton Add_btn_parallel = new JButton("Add parallel");
 		Add_btn_parallel.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		Add_btn_parallel.setBackground(new Color(100, 149, 237));
+		Add_btn_parallel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				String ID = a.getText();
+				String acdemicyearsemester = b.getText();
+				String prgramm = c.getText();
+				String ConSessionSignature= d.getText();
+				String lecturename = e.getText();
+				String duration = f.getText();
+	
+				
+				try {
+					 Connection con = DBConnect.connect();
+
+	                    String query = "INSERT INTO parallel values(null, '" + ID + "','" + acdemicyearsemester+ "','" + prgramm + "','" + ConSessionSignature + "','" + lecturename + "','" + duration + "')";
+
+	                    Statement sta = con.createStatement();
+	                    int x = sta.executeUpdate(query);
+	                    if (x == 0) {
+	                        JOptionPane.showMessageDialog(Add_btn_Consective, "This is alredy exist");
+	                    } else {
+	                        JOptionPane.showMessageDialog(Add_btn_Consective,
+	                            "Data Added parallel sucessfully");
+	                    }
+	                    con.close();
+	                } catch (Exception exception) {
+	                    exception.printStackTrace();
+	                	
+	                }
+			}
+		});
+			
 		Add_btn_parallel.setBounds(435, 531, 185, 74);
 		frame.getContentPane().add(Add_btn_parallel);
 		
@@ -229,7 +261,34 @@ public class Add_Sessions {
 		Add_btn_nonoverlapping.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		Add_btn_nonoverlapping.setBackground(new Color(255, 182, 193));
 		Add_btn_nonoverlapping.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				String ID = a.getText();
+				String acdemicyearsemester = b.getText();
+				String prgramm = c.getText();
+				String ConSessionSignature= d.getText();
+				String lecturename = e.getText();
+				String duration = f.getText();
+	
+				
+				try {
+					 Connection con = DBConnect.connect();
+
+	                    String query = "INSERT INTO nonOverlapping values(null, '" + ID + "','" + acdemicyearsemester+ "','" + prgramm + "','" + ConSessionSignature + "','" + lecturename + "','" + duration + "')";
+
+	                    Statement sta = con.createStatement();
+	                    int x = sta.executeUpdate(query);
+	                    if (x == 0) {
+	                        JOptionPane.showMessageDialog(Add_btn_Consective, "This is alredy exist");
+	                    } else {
+	                        JOptionPane.showMessageDialog(Add_btn_Consective,
+	                            "Data Added non Over lapping sucessfully");
+	                    }
+	                    con.close();
+	                } catch (Exception exception) {
+	                    exception.printStackTrace();
+	                	
+	                }
 			}
 		});
 		Add_btn_nonoverlapping.setBounds(727, 531, 199, 74);
@@ -240,14 +299,14 @@ public class Add_Sessions {
 		view_consective.setBackground(new Color(0, 255, 0));
 		view_consective.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//direct to  consecutive Frame
-				
-				//create Object (interface name,object name,interface name ) and set the initial frame name and remove the public 
-				View_Consective View_Consective = new View_Consective();
-				View_Consective.frame.setVisible(true);
-				frame.dispose();
-				
+				View_Consective MWD = new View_Consective();
+				try {
+					View_Consective.main(null);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				frame.setVisible(false);
 			}
 		});
 		view_consective.setBounds(246, 173, 185, 45);
@@ -259,15 +318,16 @@ public class Add_Sessions {
 		view_parallel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				//direct to  parallel Frame
-				
-				//create Object (interface name,object name,interface name ) and set the initial frame name and remove the public 
-				View_Parallel View_Parallel = new View_Parallel();
-				View_Parallel.frame.setVisible(true);
-				frame.dispose();
-				
-			}
-		});
+					View_Parallel MWD = new View_Parallel();
+					try {
+						View_Parallel.main(null);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					frame.setVisible(false);
+				}
+			});
 		view_parallel.setBounds(435, 172, 199, 45);
 		frame.getContentPane().add(view_parallel);
 		
@@ -277,14 +337,14 @@ public class Add_Sessions {
 		view_non_overlapping.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				//direct to  parallel Frame
-				
-				//create Object (interface name,object name,interface name ) and set the initial frame name and remove the public 
-				View_Nonoverlapping View_Nonoverlapping = new View_Nonoverlapping();
-				View_Nonoverlapping.frame.setVisible(true);
-				frame.dispose();
-				
-				
+				View_Nonoverlapping MWD = new View_Nonoverlapping();
+				try {
+					View_Nonoverlapping.main(null);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				frame.setVisible(false);
 			}
 		});
 		view_non_overlapping.setBounds(641, 173, 190, 45);
